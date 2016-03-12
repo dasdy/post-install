@@ -14,4 +14,6 @@ sudo apt-get gitk tree monodevelop-database monodevelop-versioncontrol monodevel
 sudo gem install git-up;
 git clone https://github.com/erikdubois/themes-icons-pack.git
 sudo ./themes-icons-pack/installation_deb.sh
-#git clone https://github.com/dasdy/.emacs.d.git;
+git clone https://github.com/dasdy/.emacs.d.git;
+
+git config --global push.default simple
