@@ -9,6 +9,7 @@ echo "deb http://download.mono-project.com/repo/debian wheezy-apache24-compat ma
 sudo add-apt-repository ppa:webupd8team/sublime-text-3
 sudo add-apt-repository ppa:webupd8team/atom
 sudo add-apt-repository ppa:webupd8team/java
+sudo add-apt-repository ppa:git-core/ppa
 sudo apt-get update;
 sudo apt-get gitk tree monodevelop-database monodevelop-versioncontrol monodevelop-nunit keepassx mono-devel monodevelop xfonts-terminus console-terminus install oracle-java8-installer qbittorrent wine sbcl nodejs numix-icon-theme-circle skype python-pip python3-pip dropbox shutter rhytmbox netbeans npm sublime-text-installer atom numix-gtk-theme terminator emacs-snapshot mono-complete git arc-theme ghc cabal-install ruby-full gcc g++ autoconf automake pkg-config libgtk3-dev build-essential;
 sudo gem install git-up;
