@@ -11,7 +11,7 @@ sudo add-apt-repository ppa:webupd8team/java
 sudo add-apt-repository ppa:git-core/ppa
 sudo apt update
 
-apps="gitk tree monodevelop-database monodevelop-versioncontrol monodevelop-nunit keepassx mono-devel monodevelop xfonts-terminus console-terminus  oracle-java8-installer qbittorrent wine sbcl nodejs numix-icon-theme-circle skype python-pip python3-pip shutter npm sublime-text-installer atom numix-gtk-theme terminator emacs-snapshot mono-complete git arc-theme ghc cabal-install ruby-full gcc g++ autoconf automake ubuntu-restricted-extras libavcodec-extra pkg-config build-essential"
+apps="gitk tree monodevelop-database monodevelop-versioncontrol monodevelop-nunit keepassx mono-devel monodevelop xfonts-terminus console-terminus  oracle-java8-installer qbittorrent wine sbcl nodejs numix-icon-theme-circle skype python-pip python3-pip shutter npm sublime-text-installer atom numix-gtk-theme terminator emacs-snapshot mono-complete git arc-theme ghc cabal-install ruby-full gcc g++ autoconf automake ubuntu-restricted-extras libavcodec-extra pkg-config build-essential fish"
 
 # install 1-by-1 because fuck you
 # todo: detect which one fail
