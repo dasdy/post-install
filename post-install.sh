@@ -9,9 +9,14 @@ sudo add-apt-repository ppa:webupd8team/sublime-text-3
 sudo add-apt-repository ppa:webupd8team/atom
 sudo add-apt-repository ppa:webupd8team/java
 sudo add-apt-repository ppa:git-core/ppa
+
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
+echo "deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
+
+
 sudo apt update
 
-apps="gitk meld rlwrap tree monodevelop-database monodevelop-versioncontrol monodevelop-nunit keepassx mono-devel monodevelop xfonts-terminus console-terminus  oracle-java8-installer qbittorrent wine sbcl nodejs numix-icon-theme-circle skype python-pip python3-pip shutter npm sublime-text-installer atom numix-gtk-theme terminator emacs-snapshot mono-complete git arc-theme ghc cabal-install ruby-full gcc g++ autoconf automake ubuntu-restricted-extras libavcodec-extra pkg-config build-essential fish"
+apps="gitk sqlite3 postgresql-9.5 pgadmin3 meld rlwrap tree mongodb-org monodevelop-database monodevelop-versioncontrol monodevelop-nunit keepassx mono-devel monodevelop xfonts-terminus console-terminus  oracle-java8-installer qbittorrent wine sbcl nodejs numix-icon-theme-circle skype python-pip python3-pip shutter npm sublime-text-installer atom numix-gtk-theme terminator emacs-snapshot mono-complete git arc-theme ghc cabal-install ruby-full gcc g++ autoconf automake ubuntu-restricted-extras libavcodec-extra pkg-config build-essential fish"
 
 # install 1-by-1 because fuck you
 # todo: detect which one fail
