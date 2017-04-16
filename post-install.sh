@@ -33,7 +33,7 @@ git clone https://github.com/dasdy/.emacs.d.git;
 
 mkdir ~/bin
 
-wget -o ~/bin/lein https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein
+wget -O ~/bin/lein https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein
 
 chmod +x ~/bin/lein
 
