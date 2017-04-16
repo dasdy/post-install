@@ -1,13 +1,9 @@
-# Those are steps I am to dumb/lazy to script
-- install ubuntu-tweak-tool (no repo for this)
-- install leiningen
-- install dropbox (also without repo)
-- setup theme (numix-circle, arc-darker)
+# Those are steps I am too lazy to script
+- install dropbox (w/o repo)
+- setup theme
 - install cpu indicator from [here](https://github.com/paradoxxxzero/gnome-shell-system-monitor-applet)
 - setup multiple screens (if using Cinnamon/Unity)
 - setup terminator as default terminal emulator
-- setup emacs as default editor
-- install caffeine and activate it (in some distros it is in the repo, somewhere it isn't)
 - install video drivers
 - set default monospace font to terminus
 - setup ssh key for github, bitbucket
