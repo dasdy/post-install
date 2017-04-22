@@ -1,18 +1,11 @@
 #/bin/bash
-#sudo add-apt-repository ppa:numix/ppa
+
+sudo add-apt-repository ppa:numix/ppa
 #sudo add-apt-repository ppa:ubuntu-elisp/ppa
-#sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/Horst3180/xUbuntu_16.04/ /' >> /etc/apt/sources.list.d/arc-theme.list"
-#sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-#echo "deb http://download.mono-project.com/repo/debian wheezy main" | sudo tee /etc/apt/sources.list.d/mono-xamarin.list
-#echo "deb http://download.mono-project.com/repo/debian wheezy-apache24-compat main" | sudo tee -a /etc/apt/sources.list.d/mono-xamarin.list
-#sudo add-apt-repository ppa:webupd8team/sublime-text-3
-#sudo add-apt-repository ppa:webupd8team/atom
-#sudo add-apt-repository ppa:webupd8team/java
-#sudo add-apt-repository ppa:git-core/ppa
-
-#sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
-#echo "deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
-
+sudo add-apt-repository ppa:webupd8team/sublime-text-3
+sudo add-apt-repository ppa:webupd8team/atom
+sudo add-apt-repository ppa:webupd8team/java
+sudo add-apt-repository ppa:git-core/ppa
 
 sudo apt update
 
@@ -20,15 +13,7 @@ apps="gitk sqlite3 postgresql-9.5 pgadmin3 meld rlwrap tree  keepassx mono-devel
 
 sudo apt install -y $apps
 
-# install 1-by-1 because fuck you
-# todo: detect which one fail
-#for app in $apps; do
-#    sudo apt install -y $app
-#done
-
-#sudo gem install git-up;
-#git clone https://github.com/erikdubois/themes-icons-pack.git
-#sudo ./themes-icons-pack/installation_deb.sh
+sudo pip3 install git-up
 git clone https://github.com/dasdy/.emacs.d.git;
 
 mkdir ~/bin
@@ -37,4 +22,12 @@ wget -O ~/bin/lein https://raw.githubusercontent.com/technomancy/leiningen/stabl
 
 chmod +x ~/bin/lein
 
+mkdir ~/.lein
+ln -s `pwd`/profiles.clj ~/.lein/profiles.clj
+
+mkdir -p ~/.config/fish/functions
+ln -s `pwd`/fish_prompt.fish ~/.config/fish/functions/fish_prompt.fish
+
+
 git config --global push.default simple
+git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
