@@ -96,7 +96,7 @@ bindsym $mod+a focus parent
 set $ws1  "1:"
 set $ws2  "2:"
 set $ws3  "3:"
-set $ws4  "4: "
+set $ws4  "4:"
 set $ws5  "5: "
 set $ws6  "6: "
 set $ws7  "7: "
@@ -134,6 +134,7 @@ assign [class="Clementine"] $ws10
 assign [class="Firefox"]  $ws2
 assign [class="Toolbox"] $ws3
 assign [class="jetbrains-pycharm"] $ws3
+assign [class="qBittorrent"] $ws4
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
