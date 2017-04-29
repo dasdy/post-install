@@ -130,6 +130,7 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 
 
 assign [class="Tomahawk"] $ws10
+assign [class="Clementine"] $ws10
 assign [class="Firefox"]  $ws2
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -198,7 +199,7 @@ bar {
                urgent_workspace 	$ur-bg		$ur-bg		$tx
         }
 }
-bindsym ISO_Next_Group exec pkill -RTMIN+1 i3blocks
+
 #function		border	backgr	text	indicator
 client.focused		$bg	$bg	$tx	$id
 client.focused_inactive	$in-bg	$in-bg	$in-tx	$id
@@ -226,8 +227,8 @@ bindsym Mod1+Shift exec pkill -SIGRTMIN+11 i3blocks
 
 exec_always feh --bg-fill ~/.wall.jpg
 exec --nostartup-id compton
-exec tomahawk
-
+#exec tomahawk
+exec clementine
 
 
 
