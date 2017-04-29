@@ -124,7 +124,7 @@ fi
 if [ -x /usr/bin/mint-fortune ]; then
      /usr/bin/mint-fortune
 fi
-export EDITOR=/usr/bin/emacs
+export EDITOR=/usr/bin/vim
 export VISUAL=/usr/bin/emacs
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/golang
