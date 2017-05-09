@@ -38,7 +38,7 @@ BORDER_COLOR="#222222"
 
 # Options not related to colors
 ROFI_TEXT="Menu:"
-ROFI_OPTIONS=(-width -11 -location 3 -hide-scrollbar -bw 2)
+ROFI_OPTIONS=(-width -11 -hide-scrollbar -bw 2 -config ~/.i3/rofi.conf)
 
 # Zenity options
 ZENITY_TITLE="Menu"

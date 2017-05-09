@@ -38,7 +38,8 @@ bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec rofi -show run 
-bindsym $mod+d exec rofi -show run -font "ubuntu mono 18" -fg "#505050" -bg "#000000" -hlfg "#ffb964" -hlbg "#000000" -width 30 -lines 5 -padding 20 -separator-style none -hide-scrollbar -bw 4 -bc "#111111" 
+#bindsym $mod+d exec rofi -show run -font "ubuntu mono 18" -fg "#505050" -bg "#000000" -hlfg "#ffb964" -hlbg "#000000" -width 30 -lines 5 -padding 20 -separator-style none -hide-scrollbar -bw 4 -bc "#111111"
+bindsym $mod+d exec rofi -show run -config ~/.i3/rofi.conf -lines 5 -width 30 -hide-scrollbar
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -190,19 +191,22 @@ set $tx		#c1c1c1
 set $id		#00ff00
 set $ubg	#000000
 
+
 bar {
-        status_command i3blocks -c ~/.i3/i3blocks.conf
-        tray_output primary
-        position top
-        colors {
-               background $bg
-               separator #757575
-               # 			border		background	text
-               focused_workspace	$bg		$bg		$tx
-               inactive_workspace	$in-bg		$in-bg		$in-tx
-               urgent_workspace 	$ur-bg		$ur-bg		$tx
-        }
+       status_command python3 ~/.i3/bar.py
+       position top
+       tray_output primary
+       workspace_buttons yes
+       colors {
+              background $bg
+              separator #757575
+              # 			border		background	text
+              focused_workspace	$bg		$bg		$tx
+              inactive_workspace	$in-bg		$in-bg		$in-tx
+              urgent_workspace 	$ur-bg		$ur-bg		$tx
+       }
 }
+
 
 #function		border	backgr	text	indicator
 client.focused		$bg	$bg	$tx	$id
@@ -226,8 +230,9 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 exec --no-startup-id "setxkbmap -model pc105 -layout us,ru,ua -option grp:alt_shift_toggle"
-bindsym Mod1+Shift exec pkill -SIGRTMIN+11 i3blocks
-
+#bindsym Mod1+Shift exec pkill -SIGRTMIN+11 i3blocks
+bindsym Mod1+Shift exec pkill -SIGUSR1 -f "python /home/dasdy/.config/i3/pystatus.py"
+bindsym Control+Mod1+Delete exec ~/.i3/shutdown_menu.sh
 
 exec_always feh --bg-fill ~/.wall.jpg
 exec --nostartup-id compton
