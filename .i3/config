@@ -185,25 +185,67 @@ set $in-bg #2f343f
 set $in-tx #676e7d
 set $ur-bg #e53935
 
-set $br		#000000
-set $bg		#2f343f
-set $tx		#c1c1c1
-set $id		#00ff00
-set $ubg	#000000
+set $br		 #000000
+set $bg		 #2f343f
+set $tx		 #c1c1c1
+set $id		 #00ff00
+set $ubg	 #000000
+set $transparent #00000000
 
+
+gaps outer 20
+gaps inner 2
+#smart_gaps on
+
+set $mode_gaps Gaps: (o) outer, (i) inner
+set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
+set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+bindsym $mod+Shift+g mode "$mode_gaps"
+
+mode "$mode_gaps" {
+        bindsym o      mode "$mode_gaps_outer"
+        bindsym i      mode "$mode_gaps_inner"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+mode "$mode_gaps_inner" {
+        bindsym plus  gaps inner current plus 5
+        bindsym minus gaps inner current minus 5
+        bindsym 0     gaps inner current set 0
+
+        bindsym Shift+plus  gaps inner all plus 5
+        bindsym Shift+minus gaps inner all minus 5
+        bindsym Shift+0     gaps inner all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_outer" {
+        bindsym plus  gaps outer current plus 5
+        bindsym minus gaps outer current minus 5
+        bindsym 0     gaps outer current set 0
+
+        bindsym Shift+plus  gaps outer all plus 5
+        bindsym Shift+minus gaps outer all minus 5
+        bindsym Shift+0     gaps outer all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
 
 bar {
        status_command python3 ~/.i3/bar.py
        position top
-       tray_output primary
        workspace_buttons yes
+       
        colors {
               background $bg
               separator #757575
-              # 			border		background	text
-              focused_workspace	$bg		$bg		$tx
-              inactive_workspace	$in-bg		$in-bg		$in-tx
-              urgent_workspace 	$ur-bg		$ur-bg		$tx
+              #			 border		background	text
+              focused_workspace	 $bg		$bg		$tx
+              inactive_workspace $in-bg		$in-bg		$in-tx
+              urgent_workspace 	 $ur-bg		$ur-bg		$tx
        }
 }
 
@@ -216,7 +258,6 @@ client.urgent		$ur-bg	$ur-bg	$tx	$id
 
 #gaps inner all set 20
 #gaps outer current plus 5
-
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute
 bindsym XF86AudioLowerVolume exec amixer -q set Master 2dB- unmute
@@ -235,9 +276,9 @@ bindsym Mod1+Shift exec pkill -SIGUSR1 -f "python /home/dasdy/.config/i3/pystatu
 bindsym Control+Mod1+Delete exec ~/.i3/shutdown_menu.sh
 
 exec_always feh --bg-fill ~/.wall.jpg
-exec --nostartup-id compton
+exec compton
 #exec tomahawk
 exec clementine
 
-
+#new_window none 
 
