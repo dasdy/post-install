@@ -57,7 +57,8 @@ sudo apt install -y \
      htop \
      i3  \
      i3blocks \
-     rofi
+     rofi \
+     virtualenv
 
 sudo pip3 install git-up
 
