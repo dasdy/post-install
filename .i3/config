@@ -105,7 +105,7 @@ set $ws6  "6:"
 set $ws7  "7:"
 set $ws8  "8: "
 set $ws9  "9:"
-set $ws10 "10:"
+set $ws10 "10:"
 # switch to workspace
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
@@ -196,8 +196,8 @@ set $ubg	 #222222
 set $transparent #00000000
 
 
-gaps outer 20
-gaps inner 2
+#gaps outer 20
+#gaps inner 2
 #smart_gaps on
 
 set $mode_gaps Gaps: (o) outer, (i) inner
@@ -237,20 +237,20 @@ mode "$mode_gaps_outer" {
         bindsym Escape mode "default"
 }
 
-bar {
-       status_command python3 ~/.i3/bar.py
-       position top
-       workspace_buttons yes
+# bar {
+#        status_command python3 ~/.i3/bar.py
+#        position top
+#        workspace_buttons yes
        
-       colors {
-              background $bg
-              separator #757575
-              #			 border		background	text
-              focused_workspace	 $bg		$bg		$tx
-              inactive_workspace $in-bg		$in-bg		$in-tx
-              urgent_workspace 	 $ur-bg		$ur-bg		$tx
-       }
-}
+#        colors {
+#               background $bg
+#               separator #757575
+#               #			 border		background	text
+#               focused_workspace	 $bg		$bg		$tx
+#               inactive_workspace $in-bg		$in-bg		$in-tx
+#               urgent_workspace 	 $ur-bg		$ur-bg		$tx
+#        }
+# }
 
 
 #function		border	backgr	text	indicator
@@ -279,4 +279,5 @@ exec compton
 exec clementine
 exec dropbox start
 exec caffeine_indicator
+exec_always --no-startup-id ~/.i3/polybars.sh
 

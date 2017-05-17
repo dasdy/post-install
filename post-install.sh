@@ -74,6 +74,10 @@ ln -s `pwd`/profiles.clj ~/.lein/profiles.clj
 mkdir -p ~/.config/fish/functions
 ln -s `pwd`/fish_prompt.fish ~/.config/fish/functions/fish_prompt.fish
 
+mkdir -p ~/.config/polybar
+ln -s `pwd`/polybar-config ~/.config/polybar/config
+
+
 ln -s `pwd`/.i3 ~/.i3
 ln -s `pwd`/.vimrc ~/.vimrc
 ln -s `pwd`/.emacs.d ~/.emacs.d
