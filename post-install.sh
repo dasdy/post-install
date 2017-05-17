@@ -1,6 +1,6 @@
-#/bin/bash
+#!/bin/bash
 
-add-repositories() {
+function add-repositories {
   sudo add-apt-repository ppa:numix/ppa
   sudo add-apt-repository ppa:ubuntu-elisp/ppa
   sudo add-apt-repository ppa:webupd8team/sublime-text-3
@@ -10,7 +10,7 @@ add-repositories() {
   sudo apt update
 }
 
-install-base () {
+function install-base {
   sudo apt install -y \
      gitk \
      sqlite3 \
@@ -44,12 +44,14 @@ install-base () {
      htop \
      i3  \
      rofi \
+     neofetch \
+     w3m \
      virtualenv
   sudo pip3 install git-up
 
 }
 
-install-additional-languages () {
+function install-additional-languages {
 
     sudo apt install -y \
          mono-devel \
@@ -66,7 +68,7 @@ install-additional-languages () {
     chmod +x ~/bin/lein
 }
 
-install-dm-dependencies() {
+function install-dm-dependencies {
     sudo add-apt-repository ppa:aguignard/ppa
     sudo apt-get update
     sudo apt install -y \
@@ -106,7 +108,7 @@ install-dm-dependencies() {
          libcurl4-openssl-dev
 }
 
-add-configs() {
+function add-configs {
   # config manipulations that probably only need to be done once
   mkdir ~/.lein
   ln -s `pwd`/profiles.clj ~/.lein/profiles.clj
