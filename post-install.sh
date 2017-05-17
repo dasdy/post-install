@@ -1,50 +1,37 @@
 #/bin/bash
 
-sudo add-apt-repository ppa:numix/ppa
-sudo add-apt-repository ppa:ubuntu-elisp/ppa
-sudo add-apt-repository ppa:webupd8team/sublime-text-3
-sudo add-apt-repository ppa:webupd8team/atom
-sudo add-apt-repository ppa:webupd8team/java
-sudo add-apt-repository ppa:git-core/ppa
+add-repositories() {
+  sudo add-apt-repository ppa:numix/ppa
+  sudo add-apt-repository ppa:ubuntu-elisp/ppa
+  sudo add-apt-repository ppa:webupd8team/sublime-text-3
+  sudo add-apt-repository ppa:webupd8team/atom
+  sudo add-apt-repository ppa:webupd8team/java
+  sudo add-apt-repository ppa:git-core/ppa
+  sudo apt update
+}
 
-sudo apt update
-
-sudo apt install -y \
+install-base () {
+  sudo apt install -y \
      gitk \
      sqlite3 \
-     postgresql-9.5 \
-     pgadmin3 \
      meld \
      rlwrap  \
      tree \
      keepassx \
-     mono-devel \
-     monodevelop \
      xfonts-terminus \
      console-terminus \
      oracle-java8-installer \
      qbittorrent \
-     sbcl \
-     nodejs \
      numix-icon-theme-circle \
      skype \
      python-pip \
      python3-pip \
-     shutter \
-     npm \
-     sublime-text-installer \
-     atom \
      numix-gtk-theme \
      terminator \
      emacs \
-     mono-complete \
      git \
      arc-theme \
-     ghc \
      caffeine \
-     gnome-tweak-tool \
-     cabal-install \
-     ruby-full \
      gcc \
      g++ \
      autoconf \
@@ -56,31 +43,91 @@ sudo apt install -y \
      fish \
      htop \
      i3  \
-     i3blocks \
      rofi \
      virtualenv
+  sudo pip3 install git-up
 
-sudo pip3 install git-up
+}
 
-mkdir ~/bin
+install-additional-languages () {
 
-wget -O ~/bin/lein https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein
+    sudo apt install -y \
+         mono-devel \
+         monodevelop \
+         sbcl \
+         nodejs \
+         npm \
+         ghc \
+         cabal-install \
+         ruby-full
 
-chmod +x ~/bin/lein
+    mkdir ~/bin
+    wget -O ~/bin/lein https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein
+    chmod +x ~/bin/lein
+}
 
-mkdir ~/.lein
-ln -s `pwd`/profiles.clj ~/.lein/profiles.clj
+install-dm-dependencies() {
+    sudo add-apt-repository ppa:aguignard/ppa
+    sudo apt-get update
+    sudo apt install -y \
+         libxcb1-dev \
+         libxcb-keysyms1-dev \
+         libpango1.0-dev \
+         libxcb-util0-dev \
+         libxcb-icccm4-dev \
+         libyajl-dev \
+         libstartup-notification0-dev \
+         libxcb-randr0-dev \
+         libev-dev \
+         libxcb-cursor-dev \
+         libxcb-xinerama0-dev \
+         libxcb-xkb-dev \
+         libxkbcommon-dev \
+         libxkbcommon-x11-dev \
+         autoconf \
+         libxcb-xrm-dev \ cmake \
+         cmake-data \
+         libcairo2-dev \
+         libxcb1-dev \
+         libxcb-ewmh-dev \
+         libxcb-icccm4-dev \
+         libxcb-image0-dev \
+         libxcb-randr0-dev \
+         libxcb-util0-dev \
+         libxcb-xkb-dev \
+         pkg-config \
+         python-xcbgen \
+         xcb-proto \
+         libxcb-xrm-dev \
+         i3-wm \
+         libasound2-dev \
+         libmpdclient-dev \
+         libiw-dev \
+         libcurl4-openssl-dev
+}
 
-mkdir -p ~/.config/fish/functions
-ln -s `pwd`/fish_prompt.fish ~/.config/fish/functions/fish_prompt.fish
+add-configs() {
+  # config manipulations that probably only need to be done once
+  mkdir ~/.lein
+  ln -s `pwd`/profiles.clj ~/.lein/profiles.clj
 
-mkdir -p ~/.config/polybar
-ln -s `pwd`/polybar-config ~/.config/polybar/config
+  mkdir -p ~/.config/fish/functions
+  ln -s `pwd`/fish_prompt.fish ~/.config/fish/functions/fish_prompt.fish
 
+  mkdir -p ~/.config/polybar
+  ln -s `pwd`/polybar-config ~/.config/polybar/config
 
-ln -s `pwd`/.i3 ~/.i3
-ln -s `pwd`/.vimrc ~/.vimrc
-ln -s `pwd`/.emacs.d ~/.emacs.d
+  ln -s `pwd`/.i3 ~/.i3
+  ln -s `pwd`/.vimrc ~/.vimrc
+  ln -s `pwd`/.bashrc ~/.bashrc
+  ln -s `pwd`/.emacs.d ~/.emacs.d
 
-git config --global push.default simple
-git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+  git config --global push.default simple
+  git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+}
+
+add-repositories
+install-base
+install-dm-dependencies
+install-additional-languages
+add-configs

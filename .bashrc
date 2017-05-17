@@ -95,7 +95,7 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-alias emacs='emacs-snapshot'
+#alias emacs='emacs-snapshot'
 alias apt-upgrade='sudo apt update ; sudo apt upgrade -y;'
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -128,3 +128,4 @@ export EDITOR=/usr/bin/vim
 export VISUAL=/usr/bin/emacs
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/golang
+neofetch --w3m ~/.neofetch.jpg
