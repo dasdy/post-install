@@ -39,7 +39,7 @@ font-2 = FontAwesome:pixelsize=10;1
 
 modules-left = i3
 modules-center = mpd
-modules-right = filesystem  volume xkeyboard memory cpu eth  temperature date powermenu
+modules-right = music filesystem  volume xkeyboard memory cpu eth  temperature date powermenu
 
 tray-position = right
 tray-padding = 2
@@ -247,6 +247,13 @@ menu-2-0 = power off
 menu-2-0-exec = sudo poweroff
 menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
+
+[module/music]
+type = custom/script
+interval = 2
+
+label = %output:0:45:...%
+exec = ~/.i3/mpris.sh
 
 [settings]
 screenchange-reload = true

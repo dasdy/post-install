@@ -140,6 +140,7 @@ assign [class="jetbrains-pycharm"] $ws3
 assign [class="qBittorrent"] $ws5
 assign [class="Steam"]  $ws7
 assign [class="Skype"]  $ws9
+assign [class="TelegramDesktop"]  $ws9
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
