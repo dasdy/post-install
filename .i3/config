@@ -42,6 +42,7 @@ bindsym $mod+Shift+q kill
 #bindsym $mod+d exec rofi -show run 
 #bindsym $mod+d exec rofi -show run -font "ubuntu mono 18" -fg "#505050" -bg "#000000" -hlfg "#ffb964" -hlbg "#000000" -width 30 -lines 5 -padding 20 -separator-style none -hide-scrollbar -bw 4 -bc "#111111"
 bindsym $mod+d exec rofi -show run -config ~/.i3/rofi.conf -lines 5 -width 30 -hide-scrollbar
+bindsym Mod1+Tab exec rofi -show window -config ~/.i3/rofi.conf -lines 5 -width 30 -hide-scrollbar
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
