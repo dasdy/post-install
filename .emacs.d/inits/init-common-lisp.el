@@ -1,21 +1,19 @@
 (require-package 'slime)
 (require-package 'ac-slime)
 
-(require 'slime-autoloads)
-(setq slime-contribs '(slime-fancy))
-(slime-setup slime-contribs)
-
 (add-hook 'slime-mode-hook 'set-up-slime-ac)
 (add-hook 'slime-repl-mode-hook 'set-up-slime-ac)
-;; (eval-after-load "auto-complete"
-;;    '(add-to-list 'ac-modes 'slime-repl-mode))
+(eval-after-load "auto-complete"
+   '(add-to-list 'ac-modes 'slime-repl-mode))
 
 ;; set lisp interpreter
 (setq inferior-lisp-program "sbcl")
 
-(modify-syntax-entry ?- "w" lisp-mode-syntax-table)
+(require 'slime-autoloads)
+(setq slime-contribs '(slime-fancy))
+(slime-setup slime-contribs)
 
-;;(add-hook 'lisp-mode-hook 'rainbow-delimiters-mode)
+(modify-syntax-entry ?- "w" lisp-mode-syntax-table)
 
 (defun json-format ()
   (interactive)

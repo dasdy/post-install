@@ -30,6 +30,11 @@
 (setq scroll-preserve-screen-position t)
 (setq undo-limit 90000000)
 
+;; (require 'highlight-symbol)
+;; (global-set-key (kbd "C-c h") 'highlight-symbol)
+;; (global-set-key (kbd "C-c n") 'highlight-symbol-next)
+;; (global-set-key (kbd "C-c p") 'highlight-symbol-prev)
+
 
 ;; (modify-syntax-entry ?- "w" emacs-lisp-mode-syntax-table)
 
@@ -55,3 +60,4 @@
 (load custom-file 'noerror)
 ;; (el-get 'sync)
 (provide 'init)
+(put 'erase-buffer 'disabled nil)
