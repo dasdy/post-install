@@ -279,5 +279,4 @@ exec compton
 exec clementine
 exec dropbox start
 exec caffeine_indicator
-exec_always --no-startup-id ~/.i3/polybars.sh
 exec gsettings set org.gnome.desktop.background show-desktop-icons false
