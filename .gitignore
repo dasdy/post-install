@@ -1,0 +1,16 @@
+blob-store
+compile-cache
+dev
+storage
+.apm
+.node-gyp
+.npm
+.atom/github.cson
+.atom/nohup.out
+.atom/package-deps-state.json
+.emacs.d/abbrev_defs
+.emacs.d/backups/
+.emacs.d/custom.el
+.emacs.d/el-get/
+.emacs.d/smex-items
+.emacs.d/url/

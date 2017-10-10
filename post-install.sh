@@ -117,12 +117,13 @@ function add-configs {
   ln -s `pwd`/fish_prompt.fish ~/.config/fish/functions/fish_prompt.fish
 
   mkdir -p ~/.config/polybar
-  ln -s `pwd`/polybar-config ~/.config/polybar/config
+  ln -s `pwd`/polybar.config ~/.config/polybar/config
 
   ln -s `pwd`/.i3 ~/.i3
   ln -s `pwd`/.vimrc ~/.vimrc
   ln -s `pwd`/.bashrc ~/.bashrc
   ln -s `pwd`/.emacs.d ~/.emacs.d
+  ln -s `pwd`/.atom ~/.atom
 
   git config --global push.default simple
   git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
