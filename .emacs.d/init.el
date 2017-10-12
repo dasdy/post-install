@@ -35,9 +35,6 @@
 ;; (global-set-key (kbd "C-c n") 'highlight-symbol-next)
 ;; (global-set-key (kbd "C-c p") 'highlight-symbol-prev)
 
-
-;; (modify-syntax-entry ?- "w" emacs-lisp-mode-syntax-table)
-
 (package-install-if-not-present 'magit)
 
 (setq mouse-wheel-scroll-amount '(3))
@@ -56,6 +53,8 @@
 (require 'init-go)
 ;; (require 'init-cobol)
 (require 'init-python)
+(require 'init-twiki)
+(require 'init-markdown)
 
 (load custom-file 'noerror)
 ;; (el-get 'sync)

@@ -6,8 +6,8 @@
     autoHideMenuBar: true
     telemetryConsent: "limited"
     themes: [
-      "one-dark-ui"
-      "atom-dark-syntax"
+      "one-light-ui"
+      "one-light-syntax"
     ]
   editor:
     fontFamily: "Fira Code"
