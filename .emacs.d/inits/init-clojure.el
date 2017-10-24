@@ -27,6 +27,7 @@
 (require-package 'ac-cider)
 (require-package 'projectile)
 (require-package 'clj-refactor)
+(require-package 'kibit-helper)
 
 (add-hook 'cider-mode-hook 'ac-flyspell-workaround)
 (add-hook 'cider-mode-hook 'ac-cider-setup)
