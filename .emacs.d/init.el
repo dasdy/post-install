@@ -51,9 +51,7 @@
 (require 'init-haskell)
 (require 'init-webmode)
 (require 'init-go)
-;; (require 'init-cobol)
 (require 'init-python)
-(require 'init-twiki)
 (require 'init-markdown)
 
 (load custom-file 'noerror)

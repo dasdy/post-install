@@ -7,6 +7,7 @@ function add-repositories {
   sudo add-apt-repository ppa:webupd8team/atom
   sudo add-apt-repository ppa:webupd8team/java
   sudo add-apt-repository ppa:git-core/ppa
+  sudo add-apt-repository universe
   sudo apt update
 }
 
@@ -23,7 +24,6 @@ function install-base {
      oracle-java8-installer \
      qbittorrent \
      numix-icon-theme-circle \
-     skype \
      python-pip \
      python3-pip \
      numix-gtk-theme \
@@ -46,9 +46,11 @@ function install-base {
      rofi \
      neofetch \
      w3m \
+     fonts-firacode \
      virtualenv
   sudo pip3 install git-up
 
+   
 }
 
 function install-additional-languages {
@@ -129,8 +131,14 @@ function add-configs {
   git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 }
 
+function install-soft {
+    sudo apt install -y terminator \
+         fish
+}
+
 add-repositories
 install-base
-install-dm-dependencies
+install-soft
+#install-dm-dependencies
 install-additional-languages
 add-configs
