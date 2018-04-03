@@ -199,21 +199,11 @@ bindsym $mod+r mode "resize"
 }
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-set $in-bg #2f343f
-set $in-tx #676e7d
-set $ur-bg #e53935
-
-set $br		 #000000
-set $bg		 #2f343f
-set $tx		 #c1c1c1
-set $id		 #00ff00
-set $ubg	 #222222
-set $transparent #00000000
 
 
-#gaps outer 20
-#gaps inner 2
-#smart_gaps on
+gaps outer 5
+gaps inner 2
+smart_gaps on
 
 set $mode_gaps Gaps: (o) outer, (i) inner
 set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
@@ -254,10 +244,23 @@ mode "$mode_gaps_outer" {
 
 exec_always --no-startup-id ~/.i3/polybar.sh
 
+set $in-bg  #c05c47
+set $in-tx #676e7d
+set $ur-bg #e53935
+
+set $br		 #000000
+set $bg          #2f343f
+
+set $tx		 #c1c1c1
+set $id		 #00ff00
+set $ubg         #f5f6f7
+set $transparent #00000000
+
+
 #function		border	backgr	text	indicator
-client.focused		$bg	$bg	$tx	$id
-client.focused_inactive	$in-bg	$in-bg	$in-tx	$id
-client.unfocused 	$bg     $ubg	$tx	#000000
+client.focused		$bg	$in-bg	$tx	$bg
+client.focused_inactive	$in-bg	$bg	$tx	$bg
+client.unfocused 	$bg     $bg	$tx	#000000
 client.urgent		$ur-bg	$ur-bg	$tx	$id
 
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute
@@ -280,3 +283,5 @@ exec clementine
 exec dropbox start
 exec caffeine_indicator
 exec gsettings set org.gnome.desktop.background show-desktop-icons false
+
+for_window [class="^.*"] border pixel 3
