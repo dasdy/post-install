@@ -24,8 +24,8 @@
 (add-hook 'prog-mode-hook 'line-number-mode)
 (add-hook 'prog-mode-hook 'column-number-mode)
 
-(when (window-system)
-  (set-default-font "Fira Code"))
+;;(when (window-system)
+;;(set-default-font "Fira Code"))
 
 ;; (package-install-if-not-present 'gotham-theme)
 ;; (package-install-if-not-present 'solarized-theme)
