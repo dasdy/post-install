@@ -137,16 +137,20 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 # launcher
 
-set $mode_launcher Launch: [e]macs [f]irefox [t]hunar [s]ystem-monitor
+set $emacs emacsclient -c -n -e '(switch-to-buffer nil)'
+
+set $mode_launcher Launch: [e]macs [f]irefox [t]hunar system-[m]onitor
 bindsym $mod+o mode "$mode_launcher"
 mode "$mode_launcher" {
      bindsym f exec firefox
-     bindsym e exec emacsclient -c -n
+     bindsym e exec $emacs
      bindsym t exec thunar
-     bindsym s exec gnome-system-monitor
+     bindsym m exec gnome-system-monitor
      bindsym Escape mode "default"
      bindsym Return mode "default"
 }
+
+bindsym $mod+s exec $emacs
 
 ## GAPS
 

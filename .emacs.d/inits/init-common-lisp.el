@@ -1,15 +1,19 @@
-(el-get-bundle 'slime)
-(el-get-bundle 'ac-slime)
+;; (el-get-bundle joaotavora/sly)
+(el-get-bundle slime)
+(el-get-bundle ac-slime)
+
 
 (add-hook 'slime-mode-hook 'set-up-slime-ac)
 (add-hook 'slime-repl-mode-hook 'set-up-slime-ac)
 (eval-after-load "auto-complete"
-   '(add-to-list 'ac-modes 'slime-repl-mode))
+  '(add-to-list 'ac-modes 'slime-repl-mode))
 
 ;; set lisp interpreter
 (setq inferior-lisp-program "sbcl")
 
+;; (require 'sly-autoloads)
 (require 'slime-autoloads)
+
 (setq slime-contribs '(slime-fancy))
 (slime-setup slime-contribs)
 

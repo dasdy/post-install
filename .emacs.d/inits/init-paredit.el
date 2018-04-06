@@ -7,6 +7,7 @@
         lisp-mode-hook
         cider-repl-mode-hook
         slime-repl-mode-hook
+        sly-mrepl-mode-hook
         ))
 
 (global-set-key (kbd "M-[") 'paredit-wrap-square)

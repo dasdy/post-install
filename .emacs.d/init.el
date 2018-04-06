@@ -51,6 +51,5 @@
 (require 'init-markdown)
 
 (load custom-file 'noerror)
-;; (el-get 'sync)
 (provide 'init)
 (put 'erase-buffer 'disabled nil)
