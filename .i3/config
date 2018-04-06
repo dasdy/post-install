@@ -141,7 +141,7 @@ set $mode_launcher Launch: [e]macs [f]irefox [t]hunar [s]ystem-monitor
 bindsym $mod+o mode "$mode_launcher"
 mode "$mode_launcher" {
      bindsym f exec firefox
-     bindsym e exec emacs
+     bindsym e exec emacsclient -c -n
      bindsym t exec thunar
      bindsym s exec gnome-system-monitor
      bindsym Escape mode "default"
@@ -201,16 +201,20 @@ set $inactive-border  #2f343f
 set $inactive-text    #676e7d
 set $urgent-backgr    #e53935
 set $urgent-border    #e53935
-set $border      #c05c47
-set $background  #c05c47
+set $border     #407ee7
+#c05c47
+set $background #407ee7
+#1b1918
+#c05c47
 
 set $text        #c1c1c1
+set $focused_text #ffffff
 set $indicator   #00ff00
 set $transparent #00000000
 
 
 #function               border            backgr           text  indicator
-client.focused          $border           $background      $text $background
+client.focused          $border           $background      $focused_text $background
 client.focused_inactive $inactive-border  $inactive-backgr $text $background
 client.unfocused        $inactive-border  $inactive-backgr $text #000000
 client.urgent           $urgent-border    $urgent-backgr   $text $indicator
