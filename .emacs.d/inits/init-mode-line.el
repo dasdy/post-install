@@ -1,9 +1,4 @@
-
-
-;; (package-install-if-not-present 'telephone-line)
-;; (telephone-line-mode 1)
-
-(package-install-if-not-present 'powerline)
+(el-get-bundle powerline)
 (powerline-default-theme)
 
 

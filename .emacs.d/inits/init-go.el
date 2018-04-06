@@ -1,7 +1,7 @@
-(require-package 'go-mode)
+(el-get-bundle 'go-mode)
 
-(require-package 'exec-path-from-shell)
-(require-package 'go-autocomplete)
+(el-get-bundle 'exec-path-from-shell)
+(el-get-bundle 'go-autocomplete)
 
 ;;prerequisites to work:
 ;;GOPATH set to correct value

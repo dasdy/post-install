@@ -1,4 +1,4 @@
-(require-package 'clojure-mode)
+(el-get-bundle! 'clojure-mode)
 
 (define-clojure-indent
   (defroutes 'defun)
@@ -22,12 +22,12 @@
   (bk-kill-buffers "cider")
   (bk-kill-buffers "nrepl*"))
 
-(require-package 'cider)
-(require-package 'auto-complete)
-(require-package 'ac-cider)
-(require-package 'projectile)
-(require-package 'clj-refactor)
-(require-package 'kibit-helper)
+(el-get-bundle cider)
+(el-get-bundle auto-complete)
+(el-get-bundle ac-cider)
+(el-get-bundle projectile)
+(el-get-bundle clj-refactor)
+;(el-get-bundle 'kibit-helper)
 
 (add-hook 'cider-mode-hook 'ac-flyspell-workaround)
 (add-hook 'cider-mode-hook 'ac-cider-setup)
@@ -44,7 +44,7 @@
 
 (add-hook 'cider-mode-hook 'eldoc-mode)
 
-(require-package 'projectile)
+(el-get-bundle projectile)
 (add-hook 'clojure-mode-hook 'projectile-mode)
 
 (modify-syntax-entry ?- "w" clojure-mode-syntax-table)

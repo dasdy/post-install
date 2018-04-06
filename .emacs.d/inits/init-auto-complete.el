@@ -1,6 +1,5 @@
-(require-package 'auto-complete)
+(el-get-bundle auto-complete)
 (global-auto-complete-mode)
-;; (ac-linum-workaround)
 
 (setq ac-auto-start t)
 

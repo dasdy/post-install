@@ -1,5 +1,5 @@
-(require-package 'slime)
-(require-package 'ac-slime)
+(el-get-bundle 'slime)
+(el-get-bundle 'ac-slime)
 
 (add-hook 'slime-mode-hook 'set-up-slime-ac)
 (add-hook 'slime-repl-mode-hook 'set-up-slime-ac)

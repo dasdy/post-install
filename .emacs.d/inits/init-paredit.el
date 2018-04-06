@@ -1,4 +1,4 @@
-(require-package 'paredit)
+(el-get-bundle paredit)
 
 (mapc (lambda (mode)
         (add-hook mode 'enable-paredit-mode))

@@ -7,7 +7,7 @@
 (require 'init-packages)
 
 ;; Save point position between sessions
-(require-package 'saveplace)
+(require 'saveplace)
 (setq-default save-place t)
 (setq save-place-file (expand-file-name ".places" user-emacs-directory))
 (global-subword-mode 1)
@@ -29,10 +29,11 @@
 ;; (global-set-key (kbd "C-c n") 'highlight-symbol-next)
 ;; (global-set-key (kbd "C-c p") 'highlight-symbol-prev)
 
-(package-install-if-not-present 'magit)
+(el-get-bundle 'magit)
 
 (setq mouse-wheel-scroll-amount '(3))
 (setq mouse-wheel-progressive-speed nil)
+
 
 (require 'init-shortcuts)
 (require 'init-visual)
@@ -42,9 +43,10 @@
 (require 'init-common-lisp)
 (require 'init-paredit)
 (require 'init-ido)
-(require 'init-haskell)
-(require 'init-webmode)
-(require 'init-go)
+;; (require 'init-haskell)
+;; (require 'init-webmode)
+;; (require 'init-go)
+(require 'init-tiling)
 (require 'init-python)
 (require 'init-markdown)
 

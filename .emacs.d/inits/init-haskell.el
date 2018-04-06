@@ -1,6 +1,6 @@
-(require-package 'haskell-mode)
-(require-package 'ghc)
-(require-package 'company-ghc)
+(el-get-bundle 'haskell-mode)
+(el-get-bundle 'ghc-mod)
+(el-get-bundle! 'company-ghc)
 
 ;; (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
@@ -52,7 +52,7 @@
 (custom-set-variables '(haskell-process-type 'cabal-repl))
 
 
-(require 'company)
+(el-get-bundle 'company)
 (add-hook 'haskell-mode-hook 'global-company-mode)
 
 (add-to-list 'company-backends 'company-ghc)

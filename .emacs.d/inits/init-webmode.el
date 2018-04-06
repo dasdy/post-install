@@ -1,6 +1,6 @@
-(require-package 'web-mode)
-(require-package 'skewer-mode)
-(require-package 'js2-mode)
+(el-get-bundle web-mode)
+(el-get-bundle skewer-mode)
+(el-get-bundle js2-mode)
 
 (setq web-mode-enable-auto-pairing t)
 

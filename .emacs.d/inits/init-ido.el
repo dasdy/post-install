@@ -7,7 +7,7 @@
       ido-use-filename-at-point nil
       ido-max-prospects 10)
 
-(require-package 'smex)
+(el-get-bundle smex)
 
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)

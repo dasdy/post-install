@@ -1,3 +1,3 @@
-(package-install-if-not-present 'markdown-mode)
+(el-get-bundle 'markdown-mode)
 
 (provide 'init-markdown)

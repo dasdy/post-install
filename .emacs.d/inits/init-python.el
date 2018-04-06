@@ -1,9 +1,9 @@
-(require-package 'elpy)
+(el-get-bundle! elpy)
 
-(require-package 'jedi)
-(require-package 'flycheck)
-(require-package 'py-autopep8)
-(require-package 'smartparens)
+(el-get-bundle! jedi)
+(el-get-bundle flycheck)
+(el-get-bundle py-autopep8)
+(el-get-bundle smartparens)
 
 ;; jedi:setup to start work
 ;; C-c C-p to start python

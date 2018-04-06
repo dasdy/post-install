@@ -1,4 +1,4 @@
-(require-package 'highlight-symbol)
+(el-get-bundle 'highlight-symbol)
 
 (setq inhibit-splash-screen t)
 
@@ -27,15 +27,15 @@
 (set-face-attribute 'default nil :height 100)
 (add-to-list 'default-frame-alist '(font . "Fira Code-10" ))
 
-;; (package-install-if-not-present 'gotham-theme)
-;; (package-install-if-not-present 'solarized-theme)
-;; (package-install-if-not-present 'zenburn-theme)
-;; (package-install-if-not-present 'gruvbox-theme)
-;; (package-install-if-not-present 'material-theme)
-;; (package-install-if-not-present 'github-modern-theme)
-;; (package-install-if-not-present 'github-theme)
-;; (package-install-if-not-present 'moe-theme)
-(package-install-if-not-present 'flatui-theme)
+;; (el-get-bundle 'gotham-theme)
+;; (el-get-bundle 'solarized-theme)
+;; (el-get-bundle 'zenburn-theme)
+;; (el-get-bundle 'gruvbox-theme)
+;; (el-get-bundle 'material-theme)
+;; (el-get-bundle 'github-modern-theme)
+;; (el-get-bundle 'github-theme)
+;; (el-get-bundle 'moe-theme)
+(el-get-bundle 'flatui-theme)
 (setq theme-to-load 'flatui)
 (load-theme theme-to-load t)
 
