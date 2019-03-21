@@ -40,14 +40,9 @@
 (require 'init-mode-line)
 (require 'init-auto-complete)
 (require 'init-clojure)
-(require 'init-common-lisp)
+
 (require 'init-paredit)
 (require 'init-ido)
-;; (require 'init-haskell)
-;; (require 'init-webmode)
-;; (require 'init-go)
-(require 'init-tiling)
-(require 'init-python)
 (require 'init-markdown)
 
 (load custom-file 'noerror)

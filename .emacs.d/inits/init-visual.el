@@ -3,7 +3,7 @@
 (setq inhibit-splash-screen t)
 
 (global-hl-line-mode 1)
-(menu-bar-mode -1)
+(menu-bar-mode 1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 
@@ -24,8 +24,8 @@
 (add-hook 'prog-mode-hook 'line-number-mode)
 (add-hook 'prog-mode-hook 'column-number-mode)
 
-(set-face-attribute 'default nil :height 100)
-(add-to-list 'default-frame-alist '(font . "Fira Code-10" ))
+(set-face-attribute 'default nil :height 130)
+(add-to-list 'default-frame-alist '(font . "Fira Code-13" ))
 
 ;; (el-get-bundle 'gotham-theme)
 ;; (el-get-bundle 'solarized-theme)
@@ -35,7 +35,7 @@
 ;; (el-get-bundle 'github-modern-theme)
 ;; (el-get-bundle 'github-theme)
 ;; (el-get-bundle 'moe-theme)
-(el-get-bundle 'flatui-theme)
+;; (el-get-bundle 'flatui-theme)
 (setq theme-to-load 'flatui)
 (load-theme theme-to-load t)
 
