@@ -63,6 +63,10 @@ ZSH_THEME="geoffgarside"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3.6
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/Devel
+source /Library/Frameworks/Python.framework/Versions/3.6/bin/virtualenvwrapper.sh
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
@@ -100,5 +104,22 @@ source <(kubectl completion zsh)
 source aliases.bash
 alias ll='gls -lh --color --group-directories-first'
 
+export PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
+export PATH="/Library/Frameworks/GDAL.framework/Versions/Current/Programs/:${PATH}"
+
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
+export PKG_CONFIG_PATH="/usr/local/opt/libffi/lib/pkgconfig"
+
+
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# added by travis gem
+[ -f /Users/dasd/.travis/travis.sh ] && source /Users/dasd/.travis/travis.sh
+
+# The next line updates PATH for the Google Cloud SDK.
+[ -f '/Users/dasd/google-cloud-sdk/path.bash.inc' ] && source '/Users/dasd/google-cloud-sdk/path.zsh.inc'
+
+# The next line enables shell command completion for gcloud.
+[ -f '/Users/dasd/google-cloud-sdk/completion.bash.inc' ] && source '/Users/dasd/google-cloud-sdk/completion.zsh.inc'

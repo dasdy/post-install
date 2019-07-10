@@ -20,6 +20,7 @@ export PATH="${PATH}:/Users/dasd/bin"
 # Setting PATH for Python 3.6
 # The original version is saved in .bash_profile.pysave
 export PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
+export PATH="/Library/Frameworks/GDAL.framework/Versions/Current/Programs/:${PATH}"
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/dasd/google-cloud-sdk/path.bash.inc' ]; then . '/Users/dasd/google-cloud-sdk/path.bash.inc'; fi
@@ -29,4 +30,8 @@ if [ -f '/Users/dasd/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/das
 
 
 source <(kubectl completion bash)
-source /usr/local/Cellar/git/2.21.0/etc/bash_completion.d/git-completion.bash
+source /usr/local/etc/bash_completion.d/git-completion.bash
+
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
+export PKG_CONFIG_PATH="/usr/local/opt/libffi/lib/pkgconfig"

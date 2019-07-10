@@ -9,8 +9,8 @@ alias houndci-check='flake8-diff --flake8-options --config .flake8.ini'
 
 alias beta-db-ssh-tunel='gcloud compute ssh beta-web-1 --ssh-flag "-L 9000:beta-main-db:5432"'
 
-alias k-switch-hero='kube-switch-context heroes-cluster'
-alias k-switch-cluster-1='kube-switch-context cluster-1'
+alias k-switch-hero='k-switch-context heroes-cluster'
+alias k-switch-cluster-1='k-switch-context cluster-1'
 alias k-context='kubectl config current-context'
 alias kg="kubectl get"
 
@@ -46,6 +46,6 @@ function k-logs() {
 }
 
 function k-events() {
-    kube-pod $1
+    k-pod $1
     kd pod $1 | sed -ne '/^Events/,$p'
 }
