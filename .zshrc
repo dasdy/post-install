@@ -67,7 +67,7 @@ export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3.6
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Devel
 source /Library/Frameworks/Python.framework/Versions/3.6/bin/virtualenvwrapper.sh
-plugins=(git)
+plugins=(git docker brew)
 
 source $ZSH/oh-my-zsh.sh
 source <(kubectl completion zsh)
@@ -101,7 +101,7 @@ source <(kubectl completion zsh)
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #source /usr/local/opt/powerlevel9k/powerlevel9k.zsh-theme
-source aliases.bash
+source $HOME/aliases.bash
 alias ll='gls -lh --color --group-directories-first'
 
 export PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
@@ -109,6 +109,7 @@ export PATH="/Library/Frameworks/GDAL.framework/Versions/Current/Programs/:${PAT
 
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
+export PATH="$HOME/bin:$PATH"
 export PKG_CONFIG_PATH="/usr/local/opt/libffi/lib/pkgconfig"
 
 
@@ -123,3 +124,31 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # The next line enables shell command completion for gcloud.
 [ -f '/Users/dasd/google-cloud-sdk/completion.bash.inc' ] && source '/Users/dasd/google-cloud-sdk/completion.zsh.inc'
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
+# tabtab source for slss package
+# uninstall by removing these lines or running `tabtab uninstall slss`
+[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/dasd/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/dasd/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/dasd/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/dasd/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+

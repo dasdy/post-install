@@ -8,6 +8,7 @@ alias vcode='/Applications/Visual\ Studio\ Code.app/Contents/MacOS/Electron'
 alias houndci-check='flake8-diff --flake8-options --config .flake8.ini'
 
 alias beta-db-ssh-tunel='gcloud compute ssh beta-web-1 --ssh-flag "-L 9000:beta-main-db:5432"'
+alias main-db-ssh-tunel='gcloud compute ssh beta-web-1 --ssh-flag "-L 9000:main-db-read-replica1:5432"'
 
 alias k-switch-hero='k-switch-context heroes-cluster'
 alias k-switch-cluster-1='k-switch-context cluster-1'
@@ -21,12 +22,16 @@ alias k-pod='kubectl get pods | grep '
 
 
 function dbuild-push() {
-    dbuild-ssh -t $1 .
+    dbuild-ssh -t $1 . "${@:2}"
     docker push $1
 }
 
+function knm-all() {
+    kubectl get $1 -o go-template --template '{{range .items}}{{.metadata.name}}{{"\n"}}{{end}}' | /usr/bin/grep $2
+}
+
 function knm() {
-    kubectl get $1 -o go-template --template '{{range .items}}{{.metadata.name}}{{"\n"}}{{end}}' | /usr/bin/grep $2 | head -n 1
+    knm-all $1 $2  | head -n 1
 }
 
 function kd() {
