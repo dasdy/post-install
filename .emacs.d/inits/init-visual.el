@@ -36,7 +36,7 @@
 ;; (el-get-bundle 'github-theme)
 ;; (el-get-bundle 'moe-theme)
 ;; (el-get-bundle 'flatui-theme)
-(setq theme-to-load 'flatui)
-(load-theme theme-to-load t)
+;; (setq theme-to-load 'flatui)
+;; (load-theme theme-to-load t)
 
 (provide 'init-visual)

@@ -1,27 +1,60 @@
 #!/bin/bash
 function install-soft {
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    brew tap cjbassi/ytop
+    brew tap derailed/k9s
+    brew tap homebrew/cask
+    brew tap homebrew/cask-fonts
+    brew tap railwaycat/emacsmacport
     brew install automake \
-         bash-completion \
-         coreutils \
-         git \
-         graphviz \
-         ncdu \
-         neovim \
-         pkg-config \
-         python \
-         sbcl \
-         shellcheck \
-         texinfo \
-         tree \
-         zsh-autosuggestions \
-         zsh-syntax-highlighting
-    brew cask install\
-         emacs-mac \
-         font-fira-code \
-         font-hack-nerd-font \
-         iterm2 \
-         keepassxc
+               bash-completion \
+               bat \
+               tokei \
+               cmake \
+               coreutils \
+               exa \
+               fd \
+               ffmpeg \
+               fzf \
+               git \
+               graphviz \
+               gtk+3 \
+               helm \
+               jdupes \
+               jemalloc \
+               jq \
+               derailed/k9s/k9s \
+               libscrypt \
+               lightgbm \
+               ncdu \
+               neovim \
+               node \
+               pre-commit \
+               ripgrep \
+               shellcheck \
+               sl \
+               tag \
+               tree \
+               watch \
+               wget \
+               cjbassi/ytop/ytop \
+               zsh \
+               zsh-autosuggestions \
+               zsh-syntax-highlighting \
+               zstd
+    brew cask install \
+               emacs-mac \
+               font-fira-code \
+               font-hack \
+               font-hack-nerd-font \
+               font-input \
+               font-source-code-pro \
+               font-terminus-nerd-font \
+               font-terminus-nerd-font-mono \
+               iterm2 \
+               jupyter-notebook-viewer \
+               keepassxc \
+               racket
 }
 
 function add-configs {
