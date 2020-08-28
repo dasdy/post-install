@@ -19,6 +19,8 @@ alias k='kubectl'
 
 alias k-pod='kubectl get pods | grep '
 
+alias gconf-set='gcloud config configurations activate'
+alias gconf-get='gcloud config configurations list'
 
 
 function dbuild-push() {
@@ -40,6 +42,10 @@ function kd() {
 
 function k-switch-context() {
     kubectl config use-context "gke_green-talent-125811_europe-west1-d_$1"
+}
+
+function k-set-nm () {
+    kubectl config set-context $(kubectl config current-context) --namespace="$1"
 }
 
 function k-login() {

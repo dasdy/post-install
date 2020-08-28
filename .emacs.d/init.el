@@ -39,9 +39,9 @@
 (require 'init-visual)
 (require 'init-mode-line)
 (require 'init-auto-complete)
-(require 'init-clojure)
+;; (require 'init-clojure)
 (require 'init-python)
-(require 'init-paredit)
+;; (require 'init-paredit)
 (require 'init-ido)
 (require 'init-markdown)
 
