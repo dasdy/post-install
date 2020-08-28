@@ -24,20 +24,20 @@ alias gconf-get='gcloud config configurations list'
 
 
 function dbuild-push() {
-    dbuild-ssh -t $1 . "${@:2}"
-    docker push $1
+    dbuild-ssh -t "$1" . "${@:2}"
+    docker push "$1"
 }
 
 function knm-all() {
-    kubectl get $1 -o go-template --template '{{range .items}}{{.metadata.name}}{{"\n"}}{{end}}' | /usr/bin/grep $2
+    kubectl get "$1" -o go-template --template '{{range .items}}{{.metadata.name}}{{"\n"}}{{end}}' | /usr/bin/grep "$2"
 }
 
 function knm() {
-    knm-all $1 $2  | head -n 1
+    knm-all "$1" "$2"  | head -n 1
 }
 
 function kd() {
-    kubectl describe $1 $(knm $1 $2)
+    kubectl describe "$1" "$(knm "$1" "$2")"
 }
 
 function k-switch-context() {
@@ -45,18 +45,18 @@ function k-switch-context() {
 }
 
 function k-set-nm () {
-    kubectl config set-context $(kubectl config current-context) --namespace="$1"
+    kubectl config set-context "$(kubectl config current-context)" --namespace="$1"
 }
 
 function k-login() {
-    kubectl exec -ti $(knm pod $1) bash
+    kubectl exec -ti "$(knm pod "$1")" bash
 }
 
 function k-logs() {
-    kubectl logs $(knm pod $1) "${@:2}"
+    kubectl logs "$(knm pod "$1")" "${@:2}"
 }
 
 function k-events() {
-    k-pod $1
-    kd pod $1 | sed -ne '/^Events/,$p'
+    k-pod "$1"
+    kd pod "$1" | sed -ne '/^Events/,$p'
 }
