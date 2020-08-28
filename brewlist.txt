@@ -34,3 +34,15 @@ zsh
 zsh-autosuggestions
 zsh-syntax-highlighting
 zstd
+emacs-mac
+font-fira-code
+font-hack
+font-hack-nerd-font
+font-input
+font-source-code-pro
+font-terminus-nerd-font
+font-terminus-nerd-font-mono
+iterm2
+jupyter-notebook-viewer
+keepassxc
+racket
