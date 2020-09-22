@@ -45,7 +45,7 @@ export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3.6
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Devel
 source /Library/Frameworks/Python.framework/Versions/3.6/bin/virtualenvwrapper.sh
-plugins=(git docker brew)
+plugins=(git docker brew poetry)
 
 source $ZSH/oh-my-zsh.sh
 source <(kubectl completion zsh)
@@ -61,7 +61,20 @@ export PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
 export PATH="/Library/Frameworks/GDAL.framework/Versions/Current/Programs/:${PATH}"
 
 export PATH="$HOME/.cargo/bin:/usr/local/sbin:$HOME/bin:$PATH"
+export PATH="$PATH:$HOME/.local/bin"
 export PKG_CONFIG_PATH="/usr/local/opt/libffi/lib/pkgconfig"
+export CLOUDSDK_PYTHON=python3
+
+pasteinit() {
+  OLD_SELF_INSERT=${${(s.:.)widgets[self-insert]}[2,3]}
+  zle -N self-insert url-quote-magic # I wonder if you'd need `.url-quote-magic`?
+}
+
+pastefinish() {
+  zle -N self-insert $OLD_SELF_INSERT
+}
+zstyle :bracketed-paste-magic paste-init pasteinit
+zstyle :bracketed-paste-magic paste-finish pastefinish
 
 
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
