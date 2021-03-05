@@ -41,7 +41,7 @@ function kd() {
 }
 
 function k-switch-context() {
-    kubectl config use-context "gke_green-talent-125811_europe-west1-d_$1"
+    kubectl config use-context $1
 }
 
 function k-set-nm () {
